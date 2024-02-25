@@ -8,8 +8,9 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product/', verbose_name='изображение', **NULLABLE)
     category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='категория')
     price = models.IntegerField(verbose_name='цена')
-    creation_date = models.DateTimeField(verbose_name='дата создания')
-    last_chage_date = models.DateTimeField(verbose_name='дата последнего изменения')
+    created_at = models.DateTimeField(verbose_name='дата создания')
+    updated_at = models.DateTimeField(verbose_name='дата последнего изменения')
+
 
     def __str__(self):
         return f'{self.product_name} {self.description}'
