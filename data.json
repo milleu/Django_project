@@ -1,38 +1,5 @@
 [
-  {
-    "model": "main.product",
-    "pk": 1,
-    "fields": {
-      "product_name": "Iphone",
-      "description": "ff",
-      "image": "",
-      "category": 1,
-      "price": 500000,
-      "created_at": "2024-02-25T18:49:49Z",
-      "updated_at": "2024-02-25T18:49:52Z"
-    }
-  },
-  {
-    "model": "main.product",
-    "pk": 2,
-    "fields": {
-      "product_name": "Iphone pro",
-      "description": "jj",
-      "image": "product/iphone-card-40-iphone15prohero-202309_FMT_WHH.jpeg",
-      "category": 1,
-      "price": 100000,
-      "created_at": "2024-02-25T19:43:01Z",
-      "updated_at": "2024-02-25T19:43:03Z"
-    }
-  },
-  {
-    "model": "main.category",
-    "pk": 1,
-    "fields": {
-      "category": "Phone",
-      "description": "nn"
-    }
-  },
+
   {
     "model": "main.category",
     "pk": 2,
