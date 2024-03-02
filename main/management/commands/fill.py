@@ -1,10 +1,13 @@
 from django.core.management import BaseCommand
-
+from django.db import connection
 from main.models import Product, Category
 
 class Command(BaseCommand):
-    def handle(self, *args, **options):
 
+    def handle(self, *args, **options):
+        with connection.cursor() as cursor:
+            cursor.execute("ALTER SEQUENCE main_category_id_seq RESTART WITH 1;")
+            cursor.execute("ALTER SEQUENCE main_product_id_seq RESTART WITH 1;")
         Product.objects.all().delete()
         Category.objects.all().delete()
 
@@ -32,7 +35,7 @@ class Command(BaseCommand):
         for category_item in category_list:
                 category_for_create.append(Category(**category_item))
             # Создаем объекты в базе с помощью метода bulk_create()
-        Category.objects.bulk_create(category_for_create)
+        Category.objects.bulk_create(category_list)
 
         for product_item in product_list:
             pk = product_item["category"]
