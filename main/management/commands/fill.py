@@ -35,11 +35,11 @@ class Command(BaseCommand):
         for category_item in category_list:
                 category_for_create.append(Category(**category_item))
             # Создаем объекты в базе с помощью метода bulk_create()
-        Category.objects.bulk_create(category_list)
+        Category.objects.bulk_create(category_for_create)
 
         for product_item in product_list:
             pk = product_item["category"]
-            category = Category.objects.filter(pk=pk)
+            category = Category.objects.get(pk=pk)
             price1 = product_item["price"]
             name1 = product_item["product_name"]
             product_for_create.append(

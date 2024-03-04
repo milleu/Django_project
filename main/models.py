@@ -6,10 +6,10 @@ class Product(models.Model):
     product_name = models.CharField(max_length=100, verbose_name='имя')
     description = models.CharField(max_length=1000, verbose_name='описание')
     image = models.ImageField(upload_to='product/', verbose_name='изображение', **NULLABLE)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='категория')
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='категория' )
     price = models.IntegerField(verbose_name='цена')
-    created_at = models.DateTimeField(verbose_name='дата создания')
-    updated_at = models.DateTimeField(verbose_name='дата последнего изменения')
+    created_at = models.DateTimeField(verbose_name='дата создания', **NULLABLE)
+    updated_at = models.DateTimeField(verbose_name='дата последнего изменения', **NULLABLE)
 
 
     def __str__(self):
