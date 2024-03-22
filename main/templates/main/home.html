@@ -1,4 +1,5 @@
 {% load static %}
+{% load filters %}
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
@@ -217,6 +218,7 @@
         <div class="col-md-4">
           <div class="card shadow-sm">
             <div class="card-body">
+              <img src="{% mymedia object.photo %}">
               <p class="card-text">{{object}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
